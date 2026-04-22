@@ -7,6 +7,10 @@ employee_data = {"name": ["Sachin","Sourav", "Dravid"],
                 "department": ["Analytics", "Strategy", "Operations"]}
 df = pd.DataFrame(employee_data)
 
+# add new row to the dataframe
+laxman = {"name": "Laxman", "salary": 1000, "department": "HR"}
+df = pd.concat([df, pd.DataFrame([laxman])], ignore_index=True)
+
 # save data to csv file in employee_data directory
 output_dir = Path("employee_data")
 output_dir.mkdir(parents=True, exist_ok=True)  # create directory if it doesn't exist
