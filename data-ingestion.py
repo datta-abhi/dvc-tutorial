@@ -14,6 +14,9 @@ df = pd.concat([df, pd.DataFrame([laxman])], ignore_index=True)
 # add role column to the dataframe
 df["role"] = ["Data Scientist", "Consultant", "Operations Manager", "Lead HR"]
 
+# add bonus logic as 10% of salary for all employees
+df["bonus"] = df["salary"] * 0.10
+
 # save data to csv file in employee_data directory
 output_dir = Path("employee_data")
 output_dir.mkdir(parents=True, exist_ok=True)  # create directory if it doesn't exist
